@@ -13,8 +13,9 @@ Directorat of Census and Survey Methodology (PMSS)
 * prophet: 1.1.1
 * holidays: 0.24
 * sklearn: 1.2.2
-* catboost: 1.2.5
 * warnings: unknown
+* pmdarima: 2.0.4
+* pickle: unknown
 
 This code will be running well on Python 3.10.13
 

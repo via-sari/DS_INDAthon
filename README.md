@@ -55,8 +55,8 @@ This code will be running well on Python 3.10.13
 
 
 ## Note
-Total Processing Time : 105.2s
-Prediction Time : 0.321617s
+Total Processing Time : 105.2s  
+Prediction Time : 0.321617s  
 Data Size : 8.47 KB 
 
 
@@ -70,6 +70,8 @@ Data Size : 8.47 KB
     │  ├─ prophet_regressor.pkl
     │  ├─ linreg_prophet_regressor.pkl
     ├─ full_script.ipynb
-    ├─ prophet_regressor.py
+    ├─ prophet_regressor.py    
+    ├─ linreg_prophet_regressor.py
+    ├─ linreg_prophet_regressor2.py
     ├─ README.md
 

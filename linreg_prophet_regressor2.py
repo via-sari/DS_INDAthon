@@ -19,6 +19,11 @@ def read_pickle(file):
 
     return model
 
+def get_linreg_result(file):
+    linreg = pd.read_csv(file)
+    return(linreg)
+
+
 def prepare_regressor(file):
     regressor = pd.read_csv(file, sep=';')
     regressor['dt'] = pd.to_datetime(regressor['dt'], format='%d/%m/%Y') + pd.offsets.MonthEnd(0)
@@ -61,14 +66,18 @@ def main():
     start_time_activity1 = datetime.now()
     file_pickle = 'model/linreg_prophet_regressor.pkl'
     file_regressor = 'data/regressor.csv'
+    file_linreg = 'data/linreg_result.csv'
+
     model = read_pickle(file_pickle)
     regressor = prepare_regressor(file_regressor)
+    linreg = get_linreg_result(file_linreg)
     print('++ read file done ++')
 
     forecast = predict(model, regressor)
-    print('++ forecaasting done ++')
-    print(forecast.iloc[-6:,:].yhat)
-   
+    print('++ forecasting done ++')
+    res = pd.concat([linreg.jumlah_penumpang,
+                     forecast.iloc[-1:,].yhat])
+    print(res)
 
     end_time_activity1 = datetime.now()
     duration_activity1 = end_time_activity1 - start_time_activity1

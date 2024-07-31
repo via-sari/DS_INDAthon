@@ -64,7 +64,7 @@ def main():
 
     forecast = predict(model, regressor)
     print('++ forecaasting done ++')
-    print(forecast.loc[-6:,:])
+    print(forecast.iloc[-6:,].yhat)
 
 # This code block ensures that the main function runs only when the script is executed directly.
 if __name__ == "__main__":
